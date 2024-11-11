@@ -1,0 +1,441 @@
+/* General Styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #121212; /* Dark background for page body */
+    color: #ffffff; /* Light text color for better contrast */
+}
+
+.logo-container .shine {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle, rgba(255, 215, 0, 1) 0%, rgba(255, 215, 0, 0) 70%);
+    border-radius: 50%;
+    animation: blink-shine 1.5s infinite; /* Blinking effect for the shine */
+}
+
+.logo-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+/* Blinking starshine animation */
+@keyframes blink-shine {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Header text styling */
+header h1 {
+    font-size: 2.5em;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 10;
+}
+/* Navigation Styles */
+nav {
+    background-color: #4e030e;
+    display: flex; /* Use Flexbox for the nav */
+    justify-content: center; /* Center align items horizontally */
+    flex-wrap: nowrap; /* Prevent wrapping of nav items */
+    position: sticky; /* Make the nav sticky */
+    top: 0; /* Stick to the top */
+    z-index: 1000; /* Ensure it stays above other content */
+    padding: 10px 0; /* Add padding for spacing */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Optional shadow for effect */
+}
+
+/* Navigation List Styles */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex; /* Use Flexbox for the list */
+    margin: 0; /* Remove default margin */
+    width: 100%; /* Full width for better touch targets */
+    justify-content: space-around; /* Space items evenly */
+}
+
+/* Align nav items in a single line */
+nav ul li {
+    margin: 0; /* Remove margin between items for full visibility */
+}
+
+/* Align the last item */
+nav ul li:last-child {
+    margin-right: 0; /* Remove margin from the last item */
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px; /* Padding around links */
+    display: block; /* Make links block elements for easier tapping */
+}
+
+/* Hover effect */
+nav ul li a:hover {
+    background-color: #3498db;
+    border-radius: 5px;
+}
+
+/* Media query for mobile responsiveness */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: row; /* Maintain row layout for mobile */
+        padding: 10px; /* Add padding for better touch targets */
+    }
+
+    nav ul {
+        flex-direction: row; /* Keep items in a single row */
+        flex-wrap: nowrap; /* Prevent wrapping */
+        width: 100%; /* Ensure full width */
+    }
+
+    nav ul li {
+        flex: 1; /* Allow each item to grow equally */
+        text-align: center; /* Center align text */
+    }
+
+    nav ul li a {
+        padding: 10px; /* Maintain padding */
+        font-size: 14px; /* Adjust font size for mobile */
+    }
+}
+
+
+
+/* Section Styling */
+section {
+    padding: 20px;
+    margin: 20px;
+    background-color: #333333;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+}
+
+h2 {
+    color: #f1c40f; /* Gold color for section headers */
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2980b9;
+    color: #fff;
+}
+
+/* Anchor link styles */
+a {
+    color: #f1c40f;
+}
+
+    header, footer {
+        padding: 15px;
+    }
+
+    section {
+        margin: 10px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    .logo-container {
+        width: 80px; /* Adjust logo size for smaller screens */
+    }
+    .profile-pic {
+        width: 200px;
+        height: 300px;
+        margin-right: 20px;
+        background-image: url(images/david13.jpeg); /* Placeholder image */
+        background-size: cover;
+        background-position: center;
+        background-color: #555; /* Fallback background color */
+        border-radius: 50%; /* Circular placeholder frame */
+        border: 5px solid #5b020c; /* Border around the placeholder */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    /* Increase bottom margin only in desktop view */
+    @media (min-width: 769px) { /* For screens larger than 768px */
+        .profile-pic {
+            margin-bottom: 20px; /* Adjust bottom margin for desktop */
+        }
+    }
+    
+    
+    .profile-pic img {
+        width: 100%;
+        height: auto;
+        border-radius: 50%; /* Circular profile picture */
+        margin-top: 100px; /* Keep this margin for both views */
+    }
+    
+    /* Increase bottom margin only in desktop view */
+    @media (min-width: 769px) { /* For screens larger than 768px */
+        .profile-pic img {
+            margin-bottom: 45px; /* Adjust bottom margin for desktop */
+        }
+    }
+    .profile-name {
+        opacity: 0; /* Start as invisible */
+        transform: translateX(100%); /* Start off-screen to the right */
+        transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
+       
+    }
+
+    .profile-name.visible {
+        opacity: 1; /* Fade in */
+        transform: translateX(0); /* Move to the original position */
+    }
+    .profile-name h2 {
+        font-size: 2em;
+    }
+    
+/* Header Styling */
+header {
+    position: relative;
+    background-color: #51060b; /* Fallback background color */
+    background-image: url(images/david17.jpg); /* Background image */
+    background-size: cover; /* Ensure the image covers the entire header */
+    background-position: center;
+    background-repeat: no-repeat; /* Prevent background repeat */
+    color: #d4c5c8;
+    text-align: center;
+    height: 25vh; /* Increased height for better layout in desktop view */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Align items to the bottom for better positioning */
+    padding: 20px;
+}
+
+
+
+
+
+/* Logo Styling inside header */
+.logo-container {
+    position: absolute;
+    bottom: 100px; /* Adjusted to better position the logo */
+    right: 0px;  /* Positioned on the right */
+    width: 80px;  /* Adjusted logo size for desktop */
+    height: 80px; /* Adjusted logo size for desktop */
+
+}
+/* Profile Section Styling */
+.profile-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #51060b; /* Fallback background color */
+    background-image: url('images/david10.jpeg'); /* Background image */
+    background-size: cover; /* Ensure the image covers the entire section */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent background repeat */
+    margin-top: 5px;
+    min-height: 450px; /* Minimum height for better display in desktop view */
+    width: 100%; /* Ensure full width */
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    .profile-section {
+        min-height: 250px; /* Adjust height for mobile */
+        background-color: #51060b; /* Fallback background for mobile */
+        background-size: cover; /* Keep image covering the section */
+        background-position: center;
+    }
+}
+
+
+.hidden {
+    display: none; /* Hide elements with this class */
+}
+
+/* Common Styles for All Sections */
+section {
+    border-radius: 10px; /* Rounded corners */
+    margin: 20px auto; /* Adds margin around each section */
+    max-width: 1200px; /* Limits the maximum width for better layout */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Adds a shadow for depth */
+}
+
+/* Education Section */
+#education {
+    background-image: url('images/david19.jpeg'); /* Replace with your image */
+    background-size: cover; 
+    background-position: 50% top; 
+    background-repeat: no-repeat; 
+    color: #fff; 
+    padding: 50px 20px; /* Slightly adjusted padding for better framing */
+    text-align: center; 
+    height: auto; 
+    box-sizing: border-box; 
+}
+
+/* Experience Section */
+#experience {
+    background-image: url('images/david23.jpeg'); /* Replace with your image */
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    color: #fff; 
+    padding: 50px 20px; 
+    text-align: center; 
+    height: auto; 
+    box-sizing: border-box; 
+}
+
+/* Presentations Section */
+#presentations {
+    background-image: url('images/david22.jpeg');
+    background-size: cover; 
+    background-position: center top; 
+    background-repeat: no-repeat;
+    color: #fff; 
+    padding: 50px 20px; 
+    text-align: center; 
+    height: auto; 
+    box-sizing: border-box; 
+}
+
+/* Skills Section */
+#skills {
+    background-image: url('images/david20.jpeg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    color: #fff; 
+    padding: 50px 20px; 
+    text-align: center; 
+    height: auto; 
+    box-sizing: border-box; 
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    section {
+        width: 90vw; /* Adjust width for mobile screens */
+        padding: 30px 10px; /* Adjust padding for smaller screens */
+    }
+}
+
+/* Adjust for desktop view */
+@media (min-width: 769px) {
+    #presentations {
+        height: 340px; /* Adjust height to reduce bottom space */
+    }
+}
+
+
+/* Our Services Section */
+.services-section {
+    background-color: #f8f9fa; /* Light background color */
+    color: #021cb3; /* Dark text color for contrast */
+    padding: 40px 20px; /* Padding around the section */
+    text-align: center; /* Center align the text */
+    border-radius: 8px; /* Rounded corners for the services section */
+}
+
+.services-section h2 {
+    color: #3e1995; /* Darker color for the section heading */
+}
+
+/* Navigation Container */
+.services-nav {
+    background-color: #a378e4; /* Navbar color */
+    padding: 0; /* No padding for the navbar */
+    width: 100%; /* Full width */
+    overflow-x: auto; /* Enable horizontal scrolling if items overflow */
+}
+
+/* Navigation List */
+.services-nav ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove padding */
+    display: flex; /* Use Flexbox for layout */
+    justify-content: flex-start; /* Align items to the start */
+    margin: 0; /* Remove margin above the nav */
+    align-items: center; /* Center items vertically */
+}
+
+/* Individual Navigation Items */
+.services-nav ul li {
+    margin: 0 10px; /* Reduced space between items */
+}
+
+/* Navigation Links */
+.services-nav ul li a {
+    text-decoration: none; /* Remove underline */
+    color: #e0d9d9; /* Keep the text color unchanged */
+    padding: 10px 5px; /* Adjusted padding for better fit */
+    display: block; /* Make the anchor tags block-level to cover full area */
+    font-size: 14px; /* Adjusted font size for mobile */
+}
+
+/* Hover Effect for Links */
+.services-nav ul li a:hover {
+    background-color: #3498db; /* Background color on hover */
+    color: #fff; /* Change text color on hover */
+    border-radius: 5px; /* Rounded corners for hover effect */
+}
+
+/* Media query for mobile responsiveness */
+@media (max-width: 768px) {
+    .services-nav ul {
+        flex-direction: row; /* Keep items in a row */
+        justify-content: flex-start; /* Align items to the left */
+        flex-wrap: nowrap; /* Prevent wrapping to maintain a single line */
+    }
+
+    .services-nav ul li {
+        margin: 0 5px; /* Further reduce space between items */
+    }
+
+    .services-nav ul li a {
+        padding: 8px 5px; /* Adjust padding for better fit on mobile */
+        font-size: 12px; /* Smaller font size for better fit */
+    }
+}
+
+/* General styles for services-detail sections */
+
+.services-detail {
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    color: white;
+}
+
+/* Specific background images for each section */
+#estate {
+    background-image: url('images/david25.jpeg');
+}
+
+#company {
+    background-image: url('images/david29.jpeg');
+}
+
+#appointment {
+    background-image: url('images/david27.jpeg');
+}
+
+#contracts {
+    background-image: url('images/daviid28.jpeg');
+}

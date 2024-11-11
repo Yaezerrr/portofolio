@@ -1,0 +1,102 @@
+:root {
+    /* Default values for desktop view */
+    --bg-image-height-desktop: 100vh; /* Height for desktop */
+    --bg-image-width-desktop: 100vw;  /* Width for desktop */
+    
+    /* Default values for mobile view */
+    --bg-image-height-mobile: 100vh;  /* Height for mobile */
+    --bg-image-width-mobile: 100vw;   /* Width for mobile */
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Ensure full height for body */
+    overflow: auto; /* Allow scrolling if needed */
+}
+
+.container {
+    width: var(--bg-image-width-desktop)100vw; /* Full viewport width */
+    height: var(--bg-image-height-desktop)100vh; /* Full viewport height */
+    min-height: 100vh; /* Ensure it takes up at least full viewport height */
+    background-image: url('images/david16.png');
+    background-size: cover; /* Cover the area without distortion */
+    background-position: center center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Stack content vertically */
+    padding: 20px; /* Padding for content */
+}
+
+.content {
+    text-align: center;
+    padding: 30px; /* Increase padding for better spacing */
+    margin-right: 50px;
+    color: #d6d4d5;
+    border-radius: 10px;
+    max-width: 80%; /* Limit max width for larger screens */
+    z-index: 1; /* Ensure content is above background */
+    background-image: url(images/david6.jpeg);
+    background-size: cover; /* Cover the entire content area */
+    background-position: center; /* Center the background image */
+    margin-bottom: 400px;
+    background-repeat: no-repeat; /* Prevent repeating the content image */
+    height: auto; /* Allow height to adjust based on content */
+    width: 100%; /* Ensure content section takes full width of container */
+}
+
+h1 {
+    font-size: 3em;
+    margin: 0 0 10px;
+}
+
+p {
+    font-size: 1.2em;
+    margin: 0 0 20px;
+    color: #b3bbc1;
+}
+
+.main-btn {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #2980b9;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.main-btn:hover {
+    background-color: #3498db;
+}
+
+/* Media query for mobile responsiveness */
+@media (max-width: 768px) {
+    :root {
+        --bg-image-height-mobile: 100vh;  /* Keep mobile height */
+        --bg-image-width-mobile: 100vw;   /* Keep mobile width */
+    }
+    
+    .container {
+        height: var(--bg-image-height-mobile); /* Use mobile height */
+        width: var(--bg-image-width-mobile); /* Use mobile width */
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    .main-btn {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+}
+
+
